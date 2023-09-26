@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} Dice {% endblock %}
+
+{% block header %}
+<h3>
+    Всего бросков: {{ len }}
+</h3>
+<h4>
+    Результат: <br>
+    {% for res in results %}
+     {{ res }}
+    {% endfor%}
+</h4>
+{% endblock %}
+
+{% block main %}
+<a href="{% url 'index' %}">Главная</a>
+{% endblock %}

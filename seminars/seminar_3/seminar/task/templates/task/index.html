@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ page }} {% endblock %}
+
+{% block header %}
+    <h2>Привет, {{ name }}!</h2>
+    <a href="{% url 'about' %}">Страница о нас </a> <br>
+<br> (если исправить путь можно получить любое количество бросков) ->
+    <a href="{% url 'dice' 10 %}">Бросить кубик 10 раз</a>
+{% endblock %}
