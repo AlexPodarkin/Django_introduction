@@ -109,8 +109,9 @@ def show_client_orders(request, pk):
 
 
 def list_goods_period_of_time(request, days, pk):
+    """Выводит список добавленных клиентом товаров из всех его заказов"""
     today = datetime.now()
-    range_days = today - timedelta(days=7)
+    range_days = today - timedelta(days=days)
     client = Client.objects.filter(pk=pk).first()
     orders = Order.objects.filter(client=client, date_ordered__range=(range_days, today)).all()
     context = {
