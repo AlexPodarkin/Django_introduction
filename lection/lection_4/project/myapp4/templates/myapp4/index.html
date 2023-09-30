@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} index {% endblock %}
+
+{% block header %}
+    <h2>Hello Less 4</h2>
+    <h3><a href="{% url 'user_form' %}"> form </a></h3>
+    <h3><a href="{% url 'user_form_2' %}"> form_2 </a></h3>
+    <h3><a href="{% url 'many_fields_form' %}"> many_fields_form </a></h3>
+    <h3><a href="{% url 'add_user' %}"> Добавить пользователя в БД </a></h3>
+    <h3><a href="{% url 'show_users' %}"> Показать всех пользователей </a></h3>
+    <h3><a href="{% url 'upload_image' %}"> Загрузить файл на сервер </a></h3>
+    <h3><a href="{% url 'choice_user' %}"> Отправить сообщение пользователю </a></h3>
+{% endblock %}
+
+{% block main %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% if users %}
+    <h2> Загружено из БД: </h2>
+    {% for user in users %}
+        Имя:     {{ user.name }}  <br>
+        Почта:   {{ user.email }} <br>
+        Возраст: {{ user.age }}   <br><br>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

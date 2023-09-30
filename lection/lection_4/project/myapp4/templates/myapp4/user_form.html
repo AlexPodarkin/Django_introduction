@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Forms {% endblock %}
+
+{% block header %}
+<h2>Hello Less 4</h2>
+{% endblock %}
+
+{% block main %}
+<h3>{{ message }}</h3>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_div }}
+<!--    либо {{ form.as_p }}(в данном случае в теге <p>), {{ form }} (вывод без тегов)-->
+    <input type="submit" value="Send">
+
+<!--    Ниже (необязательный код) flash сообщения, если надо (ul-li)-->
+    <ul>
+        {% if messages %}
+        <li>
+            {% for message in messages %}
+                    {% if message.tags %}
+                        {{ message.tags }}
+                    {% endif %}
+                {{ message }}
+            {% endfor %}
+        </li>
+        {% endif %}
+    </ul>
+</form>
+
+{% endblock %}
+
+{% block footer %}
+    <h3><a href="{% url 'index' %}"> Index </a></h3>
+{% endblock %}
