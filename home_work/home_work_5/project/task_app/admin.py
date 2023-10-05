@@ -65,7 +65,7 @@ class ClientAdmin(admin.ModelAdmin):
     ]
 
 
-class ClientOrder(admin.ModelAdmin):
+class OrderAdmin(admin.ModelAdmin):
     list_display = ['client', 'date_ordered', 'total_price']
     ordering = ['date_ordered']
     list_filter = ['date_ordered']
@@ -106,4 +106,4 @@ class ClientOrder(admin.ModelAdmin):
 
 admin.site.register(models.Client, ClientAdmin)
 admin.site.register(models.Product, ProductAdmin)
-admin.site.register(models.Order, ClientOrder)
+admin.site.register(models.Order, OrderAdmin)
