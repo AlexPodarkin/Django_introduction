@@ -1,7 +1,6 @@
 from django.shortcuts import render
 import logging
-from . import forms
-from . import models
+from . import models, forms
 from django.core.files.storage import FileSystemStorage
 from django.contrib import messages
 
